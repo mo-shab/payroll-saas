@@ -8,7 +8,11 @@ import {
 import { User, Globe } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
 
-const Logo = () => <div className="text-xl font-bold">Moroccan Payroll SaaS</div>;
+const Logo = ({ onClick }: { onClick?: () => void }) => (
+  <div className="text-xl font-bold cursor-pointer" onClick={onClick}>
+    Moroccan Payroll SaaS
+  </div>
+);
 
 export default function Header() {
   const navigate = useNavigate();
@@ -22,7 +26,7 @@ export default function Header() {
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         {/* Left: Logo + Nav */}
         <div className="flex items-center space-x-6">
-          <Logo />
+          <Logo onClick={() => navigate("/")} />
           <nav className="hidden md:flex items-center space-x-4">
             <Button 
               variant="link" 

@@ -4,6 +4,7 @@ import Employees from "./pages/Employees";
 import Payroll from "./pages/Payroll";
 import Dashboard from "./components/Dashboard";
 import Layout from "./components/Layout";
+import { Toaster } from "@/components/ui/sonner";
 import './App.css';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path="/payroll" element={<Payroll />} />
         </Routes>
       </Layout>
+      <Toaster />
     </BrowserRouter>
   );
 }

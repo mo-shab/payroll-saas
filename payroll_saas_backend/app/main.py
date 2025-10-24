@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.core.database import Base, engine
-from app.api import employees, payroll
+from app.api import employees, payroll, payslips
 
 # Create database tables
 Base.metadata.create_all(bind=engine)
@@ -20,6 +20,7 @@ app.add_middleware(
 # include routes
 app.include_router(employees.router)
 app.include_router(payroll.router)
+app.include_router(payslips.router)
 
 @app.get("/")
 def root():

@@ -11,3 +11,13 @@ export const createEmployee = async (data: any) => {
   const res = await axios.post(`${API_URL}`, data);
   return res.data;
 };
+
+export const updateEmployee = async (id: number, data: any) => {
+  const res = await axios.put(`${API_URL}${id}`, data);
+  return res.data;
+};
+
+export const deleteEmployee = async (id: number) => {
+  const res = await axios.delete(`${API_URL}${id}`);
+  return res.data;
+};
